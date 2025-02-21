@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #212121;
     --foreground: #ededed;
   }
 }
@@ -18,4 +18,49 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 2 !important;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+  overflow-y: auto;
+  /* border: 1px solid #ccc; */
+}
+
+/* Scrollbar Styling */
+textarea::-webkit-scrollbar {
+  width: 10px; 
+  background: rgb(60, 53, 53); 
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: darkgray; 
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+
+textarea::-webkit-scrollbar-button {
+  /* background: darkgray; */
+}
+
+.textbox {
+  width: 90%;
+  max-width: 520px;
+  border-radius: 16px;
+  border: 1px solid #4f4f4f;
+  padding: 20px;
+}
+
+.text-icon .tooltip {
+  display: none;
+}
+
+.text-icon:hover .tooltip {
+  display: block;
 }
