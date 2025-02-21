@@ -165,7 +165,7 @@ export default function Home() {
         <section className="pt-16 pb-[180px] px-[5%]">
           <div className="w-full max-w-3xl mx-auto">
             {pageData.map((item, index) => (
-              <div className="flex flex-col gap-6 md:mb-7" key={index}>
+              <div className="flex flex-col gap-6 mb-7" key={index}>
                 {/* main text */}
                 <MainTextBox
                   id={item.id}
