@@ -41,8 +41,7 @@ export default function Home() {
     data.id = pageData.length + 1;
 
     // detected language check
-    data.detected_language = await detectLang();
-
+    data.detected_language = await detectLang(userText);
     setPageData([...pageData, data]);
     setUserText("");
   };
@@ -54,7 +53,7 @@ export default function Home() {
         const results = await detector.detect(str);
         let lang = results[0].detectedLanguage;
         let result = options.filter((item) => item.code === lang);
-        return result[0].name || lang;
+        return result[0]?.name || lang;
       } catch (err) {
         setToast("error");
         setToastMessage(err);
@@ -156,7 +155,7 @@ export default function Home() {
     <main className="relative min-h-screen">
       {/* header */}
       <div className="fixed h-14 w-full flex items-center gap-2 bg-background px-[5%]">
-        <FontAwesomeIcon icon={faRobot} size="xl" />
+        <FontAwesomeIcon icon={faRobot} className="h-6" />
         <p className="text-lg font-semibold">Summary.ai</p>
       </div>
       {/* prelim textbox like chat-gpt */}

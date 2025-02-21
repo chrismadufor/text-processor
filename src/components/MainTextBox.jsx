@@ -38,7 +38,7 @@ export default function MainTextBox({
   };
 
   let result = options.filter((item) => item.name === lang);
-  let code = result[0]?.code;
+  let code = result[0]?.code || lang.toLowerCase();
 
   const checkWordsCount = () => {
     return text.trim().length > 150;
